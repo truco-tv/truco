@@ -7,19 +7,19 @@ import (
 func TestNewDeck(t *testing.T) {
 	deck := NewDeck()
 
-	if !deck.Cards[SevenCoinDefaultDeck].isSevenCoin() {
+	if !deck.Cards[SevenCoinDefaultDeck].IsSevenCoin() {
 		t.Errorf("Seven of Coins is not in the right position %d %d", deck.Cards[SevenCoinDefaultDeck].Value, deck.Cards[SevenCoinDefaultDeck].Suit)
 	}
 
-	if !deck.Cards[SevenSwordDefaultDeck].isSevenSword() {
+	if !deck.Cards[SevenSwordDefaultDeck].IsSevenSword() {
 		t.Errorf("Seven of Swords is not in the right position %d %d", deck.Cards[SevenSwordDefaultDeck].Value, deck.Cards[SevenSwordDefaultDeck].Suit)
 	}
 
-	if !deck.Cards[BastilloDefaultDeck].isBastillo() {
+	if !deck.Cards[BastilloDefaultDeck].IsBastillo() {
 		t.Errorf("Bastillo is not in the right position %d %d", deck.Cards[BastilloDefaultDeck].Value, deck.Cards[BastilloDefaultDeck].Suit)
 	}
 
-	if !deck.Cards[EspadillaDefaultDeck].isEspadilla() {
+	if !deck.Cards[EspadillaDefaultDeck].IsEspadilla() {
 		t.Errorf("Espadilla is not in the right position %d %d", deck.Cards[EspadillaDefaultDeck].Value, deck.Cards[EspadillaDefaultDeck].Suit)
 	}
 }

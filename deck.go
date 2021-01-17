@@ -5,6 +5,11 @@ const (
 	SevenSwordDefaultDeck int = 15
 	BastilloDefaultDeck   int = 30
 	EspadillaDefaultDeck  int = 31
+
+	SevenCoinRankedDeck  int = 40
+	SevenSwordRankedDeck int = 41
+	BastilloRankedDeck   int = 42
+	EspadillaRankedDeck  int = 43
 )
 
 type Deck struct {

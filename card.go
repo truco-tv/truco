@@ -27,19 +27,19 @@ func NewCard(value, suit int) *Card {
 	return card
 }
 
-func (card *Card) isSevenCoin() bool {
+func (card *Card) IsSevenCoin() bool {
 	return card.Suit == Coin && card.Value == 7
 }
 
-func (card *Card) isSevenSword() bool {
+func (card *Card) IsSevenSword() bool {
 	return card.Suit == Sword && card.Value == 7
 }
 
-func (card *Card) isBastillo() bool {
+func (card *Card) IsBastillo() bool {
 	return card.Suit == Stick && card.Value == 1
 }
 
-func (card *Card) isEspadilla() bool {
+func (card *Card) IsEspadilla() bool {
 	return card.Suit == Sword && card.Value == 1
 }
 
