@@ -8,8 +8,8 @@ const (
 )
 
 type Card struct {
-	Suit        int
 	Value       int
+	Suit        int
 	GameValue   int
 	Placeholder bool
 	IsVira      bool

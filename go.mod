@@ -1,4 +1,4 @@
-module github.com/truco-tv
+module github.com/truco-tv/truco
 
 go 1.15
 
