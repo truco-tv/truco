@@ -30,4 +30,11 @@ func TestNewCheatSheet(t *testing.T) {
 		t.Errorf("Ranked Deck is not being generated correctly espadilla")
 	}
 
+	if !cards[PericaRankedDeck].IsPerica() {
+		t.Errorf("Ranked Deck is not being generated correctly perica")
+	}
+
+	if !cards[PericoRankedDeck].IsPerico() {
+		t.Errorf("Ranked Deck is not being generated correctly perico")
+	}
 }

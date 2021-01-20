@@ -13,16 +13,16 @@ type Card struct {
 	GameValue   int
 	Placeholder bool
 	IsVira      bool
-	IsPerica    bool
-	IsPerico    bool
+	Perica      bool
+	Perico      bool
 }
 
 func NewCard(value, suit int) *Card {
 	card := &Card{Suit: suit, Value: value, GameValue: value}
 	card.Placeholder = false
 	card.IsVira = false
-	card.IsPerica = false
-	card.IsPerico = false
+	card.Perica = false
+	card.Perico = false
 
 	return card
 }
@@ -43,6 +43,14 @@ func (card *Card) IsEspadilla() bool {
 	return card.Suit == Sword && card.Value == 1
 }
 
+func (card *Card) IsPerica() bool {
+	return card.Perica == true
+}
+
+func (card *Card) IsPerico() bool {
+	return card.Perico == true
+}
+
 func (card *Card) SetPlaceHolder(value bool) *Card {
 	card.Placeholder = value
 	return card
@@ -54,11 +62,11 @@ func (card *Card) SetIsVira(value bool) *Card {
 }
 
 func (card *Card) SetIsPerica(value bool) *Card {
-	card.IsPerica = value
+	card.Perica = value
 	return card
 }
 
 func (card *Card) SetIsPerico(value bool) *Card {
-	card.IsPerico = value
+	card.Perico = value
 	return card
 }

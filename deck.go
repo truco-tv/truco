@@ -10,6 +10,8 @@ const (
 	SevenSwordRankedDeck int = 41
 	BastilloRankedDeck   int = 42
 	EspadillaRankedDeck  int = 43
+	PericaRankedDeck     int = 44
+	PericoRankedDeck     int = 45
 )
 
 type Deck struct {

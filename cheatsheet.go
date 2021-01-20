@@ -27,8 +27,42 @@ func NewCheatSheet(vira *Card, deck *Deck) []*Card {
 	espadillaRanked, _ := deck.FindCard(espadilla)
 	deck.Cards[EspadillaDefaultDeck] = espadilla
 
+	pericaRanked, perica, pericaPositionInDeck := Perica(vira, deck)
+	pericaRanked.SetIsPerica(true)
+	perica.SetPlaceHolder(true)
+	deck.Cards[pericaPositionInDeck] = perica
+
+	pericoRanked, perico, pericoPositionInDeck := Perico(vira, deck)
+	pericoRanked.SetIsPerico(true)
+	perico.SetPlaceHolder(true)
+	deck.Cards[pericoPositionInDeck] = perico
+
 	newCards := deck.Cards[0:]
-	newCards = append(newCards, sevenCoinRanked, sevenSwordRanked, bastilloRanked, espadillaRanked)
+	newCards = append(newCards, sevenCoinRanked, sevenSwordRanked, bastilloRanked, espadillaRanked, pericaRanked, pericoRanked)
 
 	return newCards
+}
+
+func Perica(vira *Card, deck *Deck) (*Card, *Card, int) {
+	if vira.Value == 10 {
+		perica := NewCard(12, vira.Suit)
+		pericaOnDeck, positionInDeck := deck.FindCard(perica)
+		return pericaOnDeck, perica, positionInDeck
+	}
+
+	perica := NewCard(10, vira.Suit)
+	pericaOnDeck, positionInDeck := deck.FindCard(perica)
+	return pericaOnDeck, perica, positionInDeck
+}
+
+func Perico(vira *Card, deck *Deck) (*Card, *Card, int) {
+	if vira.Value == 11 {
+		perico := NewCard(12, vira.Suit)
+		pericoOnDeck, positionInDeck := deck.FindCard(perico)
+		return pericoOnDeck, perico, positionInDeck
+	}
+
+	perico := NewCard(11, vira.Suit)
+	pericoOnDeck, positionInDeck := deck.FindCard(perico)
+	return pericoOnDeck, perico, positionInDeck
 }
