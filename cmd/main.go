@@ -20,6 +20,7 @@ func HandleRequest(ctx context.Context, request events.APIGatewayProxyRequest) (
 	vira := &truco.Card{Value: value, Suit: suit}
 	cards := truco.NewCheatSheet(vira, deck)
 	cardsJson, _ := json.Marshal(cards)
+	//MultiValueQueryStringParameters
 
 	return events.APIGatewayProxyResponse{Body: string(cardsJson), StatusCode: 200}, nil
 }
