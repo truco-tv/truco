@@ -71,10 +71,12 @@ func (card *Card) SetIsVira(value bool) *Card {
 
 func (card *Card) SetIsPerica(value bool) *Card {
 	card.Perica = value
+	card.EnvidoValue = 9
 	return card
 }
 
 func (card *Card) SetIsPerico(value bool) *Card {
 	card.Perico = value
+	card.EnvidoValue = 10
 	return card
 }
