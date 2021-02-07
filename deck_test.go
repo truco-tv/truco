@@ -36,5 +36,12 @@ func TestFindCard(t *testing.T) {
 	if position != EspadillaDefaultDeck {
 		t.Errorf("Espadilla in wrong position default deck")
 	}
+}
 
+func TestDealCard(t *testing.T) {
+	deck := NewDeck()
+	deck.DealCard()
+	if len(deck.Cards) != 39 {
+		t.Errorf("Dealing cards not working as expected %d", len(deck.Cards))
+	}
 }

@@ -1,16 +1,19 @@
 package truco
 
 const (
-	Cup   int = 1
-	Coin  int = 2
-	Stick int = 3
-	Sword int = 4
+	Cup               int = 1
+	Coin              int = 2
+	Stick             int = 3
+	Sword             int = 4
+	PericaEnvidoValue int = 9
+	PericoEnvidoValue int = 10
 )
 
 type Card struct {
 	Value       int
 	Suit        int
 	GameValue   int
+	EnvidoValue int
 	Placeholder bool
 	IsVira      bool
 	Perica      bool
@@ -23,6 +26,11 @@ func NewCard(value, suit int) *Card {
 	card.IsVira = false
 	card.Perica = false
 	card.Perico = false
+	card.EnvidoValue = value
+
+	if value == 10 || value == 11 || value == 12 {
+		card.EnvidoValue = 0
+	}
 
 	return card
 }

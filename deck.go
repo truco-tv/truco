@@ -15,7 +15,7 @@ const (
 )
 
 type Deck struct {
-	Cards [40]*Card
+	Cards []*Card
 }
 
 func NewDeck() *Deck {
@@ -27,13 +27,12 @@ func NewDeck() *Deck {
 	suitRange := []int{Cup, Coin, Stick, Sword}
 
 	deckOrderRange := [][]int{firstRange, secondRange, thirdRange}
-	cardIndex := 0
+
 	for _, deckRange := range deckOrderRange { //ranges 4-7 10-12 1-3 | i
 		for _, value := range deckRange { //ranges 4,5,6,7 | 10,11,12 | 1,2,3 |
 			for _, suit := range suitRange { // 1,2,3,4 (suits)
 				card := NewCard(value, suit)
-				deck.Cards[cardIndex] = card
-				cardIndex++
+				deck.Cards = append(deck.Cards, card)
 			}
 		}
 	}
@@ -49,4 +48,11 @@ func (deck *Deck) FindCard(card *Card) (*Card, int) {
 	}
 
 	return nil, 0
+}
+
+func (deck *Deck) DealCard() *Card {
+	card := deck.Cards[0]
+	deck.Cards = deck.Cards[1:]
+
+	return card
 }
